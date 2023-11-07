@@ -51,7 +51,7 @@ export default {
   methods: {
      moveUp(){
         setInterval(async() =>{
-            let pos = await axios.get('http://127.0.0.1:5000/sateliteISS')
+            let pos = await axios.get('http://127.0.0.1:5000/iss')
             console.log(pos)
             
             
@@ -62,7 +62,7 @@ export default {
 
             return 0
 
-        },5000)
+        },1000)
     }
   }
 }

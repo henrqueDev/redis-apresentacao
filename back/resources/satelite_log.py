@@ -22,5 +22,5 @@ class SateliteLogResource(Resource):
         else:
             log = SateliteLogModel(obj["latitude"], obj["longitude"], 0)
             log.save()
-        obj["distancia_percorrida"] = SateliteLogModel.get_total_distance()
+        obj["distancia_percorrida_total"] = SateliteLogModel.get_total_distance()
         return jsonify(obj)
