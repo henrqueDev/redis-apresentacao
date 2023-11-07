@@ -3,4 +3,7 @@ Flask-RESTful
 Flask-JWT-Extended
 Flask-SQLAlchemy
 requests
+mpmath
+redis
+flask-redis
 psycopg2-binary

@@ -1,4 +1,4 @@
-from flask_redis import FlaskRedis
+from redis import Redis
 
 
-banco = FlaskRedis()
+banco =  Redis(host='127.0.0.1', port=6379)
