@@ -33,7 +33,7 @@ class SateliteLogModel(banco.Model):
         inicio = time.time()
         res = banco.session.query(func.sum(SateliteLogModel.distancia_percorrida).label('distancia_total')).first()
         metrics = time.time() - inicio
-        return {'distancia_percorrida' : res[0], 'total_time' : metrics}
+        return res[0]
 
     def save(self):
         banco.session.add(self)

@@ -6,6 +6,7 @@ from modules.calculos.distanciaPercorridaSatelite import calcularDistanciaPercor
 from client_redis import banco
 
 class SateliteLogResource(Resource):
+    
     atributos = reqparse.RequestParser()
 
     def get(self):

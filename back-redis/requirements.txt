@@ -2,6 +2,7 @@ Flask
 Flask-RESTful
 Flask-JWT-Extended
 Flask-SQLAlchemy
+Flask-Cors 
 requests
 mpmath
 redis

@@ -9,6 +9,9 @@
         <p style="color: red; font-size:30px;"> 
             
             {{ velocidadeNaOrbita }} </p>
+        <p style="color: red; font-size:30px;"> 
+            
+            {{ distanciaTotalMonitorada }} </p>
         
   <l-map  class="radar" :zoom="zoom" :center="center">
     <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
@@ -42,7 +45,8 @@ export default {
             MyMap: null,
             refresh: false,
             velocidadeNaOrbita: 'Velocidade na orbita: 0 Km/h',
-            altitude: ' Altitude: 0 km'
+            altitude: ' Altitude: 0 km',
+            distanciaTotalMonitorada: 'Deslocamento (km) monitorado: 0km'
     };
   },
   mounted(){
@@ -59,10 +63,10 @@ export default {
             this.center= L.latLng(pos.data.latitude , pos.data.longitude)
             this.velocidadeNaOrbita = `Velocidade na orbita: ${pos.data.velocity.toFixed(2)} Km/h`
             this.altitude = `Altitude: ${900 + pos.data.altitude} Km`
-
+            this.distanciaTotalMonitorada = `Deslocamento (km) monitorado: ${pos.data.distancia_percorrida_total.toFixed(2)} Km`
             return 0
 
-        },1000)
+        },5000)
     }
   }
 }

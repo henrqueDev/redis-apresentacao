@@ -34,6 +34,15 @@ export default {
   buildModules: [
   ],
 
+  routeRules: {
+    '/**': {
+        proxy: { to: "http://127.0.0.1:5000/**", },
+    }
+  },
+  proxy: {
+    '/iss': { target: 'http://127.0.0.1:5000', pathRewrite: {'^/iss': ''} }
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
